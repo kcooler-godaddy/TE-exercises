@@ -133,13 +133,23 @@ You are encouraged to make "less" part of your standard command line toolkit.
 Did you remember to save "m1-introduction-to-tools-exercise.txt"?
 
 $ git status
-<type or copy-paste the result here>
+<On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   ../introduction-to-tools-exercises.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")>
 
 $ git add .
-<type or copy-paste the result here>
+
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+[master 3632100] Good stopping point
+ 1 file changed, 16 insertions(+), 6 deletions(-)
 
 Note, you do not need to push this commit up to BitBucket. The typical Git 
 workflow is to many small commits to your local repo, with pushes up to 
@@ -152,8 +162,8 @@ BitBucket when a feature, fix, or in this case, assignment is finished.
 ----
 
 $ cd src/main/java/com/techelevator
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ pwd
+/Users/kcooler/development/kevincooler-java-blue-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld/src/main/java/com/techelevator
 
 
 ----
@@ -161,7 +171,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+relative, becuase it doesn't list the path all the way back to the home. 
 
 
 ----
@@ -169,8 +179,11 @@ $ <enter command to display present working directory>
     your present working directory.
 ----
 
-$ <enter command to list all files and folders including dot-files and dot-folders>
-<type or copy-paste the result here>
+$ ls -la
+total 8
+drwxr-xr-x  3 kcooler  staff  102 May 21 15:10 .
+drwxr-xr-x  3 kcooler  staff  102 May 21 15:10 ..
+-rw-r--r--@ 1 kcooler  staff  141 May 21 15:10 Helloworld.java
 
 
 ----
@@ -184,8 +197,12 @@ $ cp Helloworld.java Helloworld.java.backup
 The "cp" parameters are the name of the source file followed by the name of the 
 destination file. 
 
-$ <enter command to list all files and folders in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+$ ls -la
+total 16
+drwxr-xr-x  4 kcooler  staff  136 May 21 16:54 .
+drwxr-xr-x  3 kcooler  staff  102 May 21 15:10 ..
+-rw-r--r--@ 1 kcooler  staff  141 May 21 15:10 Helloworld.java
+-rw-r--r--@ 1 kcooler  staff  141 May 21 16:54 Helloworld.java.backup
 
 
 ----    
@@ -198,8 +215,12 @@ $ mv Helloworld.java.backup Helloworld.java.copy
 The "mv" parameters are the existing name of the file followed by the new name 
 of the file. 
 
-$ <enter command to list all files and folders in order to confirm the renaming of the file>
-<type or copy-paste the result here>
+$ ls -la
+total 16
+drwxr-xr-x  4 kcooler  staff  136 May 21 16:58 .
+drwxr-xr-x  3 kcooler  staff  102 May 21 15:10 ..
+-rw-r--r--@ 1 kcooler  staff  141 May 21 15:10 Helloworld.java
+-rw-r--r--@ 1 kcooler  staff  141 May 21 16:56 Helloworld.java.copy
 
 
 ----
@@ -207,17 +228,35 @@ $ <enter command to list all files and folders in order to confirm the renaming 
     commit to the local repository, but also push it up to BitBucket. 
 ----
 
-$ <enter the Git command to display status>
-<type or copy-paste the result here>
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
 
-$ <enter the Git command to "stage" all changes>
-<type or copy-paste the result here>
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
-$ <enter the Git command to save all "staged" changes>
-<type or copy-paste the result here>
+	Helloworld.java.copy
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+$ git add -A
+Nothing displays unless I check the status again. 
+
+$ git commit -m "feature completion"
+[master 545557c] feature completion
+ 1 file changed, 9 insertions(+)
+ create mode 100644 m1-w1d1-intro-to-tools-exercises/java-helloworld/src/main/java/com/techelevator/Helloworld.java.copy
 
 $ git push
-<type or copy-paste the result here>
+Counting objects: 13, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (13/13), 1.28 KiB | 436.00 KiB/s, done.
+Total 13 (delta 5), reused 0 (delta 0)
+To https://bitbucket.org/te-cbus-cohort-5/kevincooler-java-blue-exercises
+   dce2929..545557c  master -> master
+
 
 
 ----
@@ -228,8 +267,11 @@ $ rm Helloworld.java.copy
 
 The "rm" parameter is the name of the file to be deleted.
 
-$ <enter command to list all files and folders in order to confirm the file deletion>
-<type or copy-paste the result here>
+$ ls -la
+total 8
+drwxr-xr-x  3 kcooler  staff  102 May 21 17:04 .
+drwxr-xr-x  3 kcooler  staff  102 May 21 15:10 ..
+-rw-r--r--@ 1 kcooler  staff  141 May 21 15:10 Helloworld.java
 
 
 ----
@@ -250,8 +292,8 @@ command line when that seems natural.
 
 Regardless of the option you chose, check your new location.
 
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ pwd
+/Users/kcooler/development/kevincooler-java-blue-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld
 
 
 ----
@@ -260,9 +302,9 @@ $ <enter command to display present working directory>
 ----
 
 $ mkdir docs
-$ <enter the command to change directory to "docs" using a relative path>
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ cd docs
+$ pwd
+/Users/kcooler/development/kevincooler-java-blue-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld/docs
 
 ----
 19. Create a new file name "readme.txt" using Visual Studio Code, and add the text
@@ -279,10 +321,10 @@ Don't forget to save the file in Visual Studio Code!
     work so it can be reviewed by an instructor.
 ----
 
-$ <enter the Git command to display status>
+$ git status
 
-$ <enter the Git command to "stage" all changes>
+$ git add -A
 
-$ <enter the Git command to save all "staged" changes>
+$ git commit -m "submission of first exercises"
 
-$ <enter the Git command to save local repository to BitBucket>
+$ git push
