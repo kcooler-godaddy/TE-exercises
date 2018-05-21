@@ -29,7 +29,7 @@ actual command from other text in Unix documentation.
 2.  What does the ~ (tilde) character in the above command to change directory 
     refer to?
 ----
-
+it means "Home"
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on 
@@ -38,7 +38,7 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
+/Users/kcooler/development/kevincooler-java-blue-exercises/m1-w1d1-intro-to-tools-exercises/java-helloworld
 
 The present working directory displayed should match the directory you changed 
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -54,7 +54,13 @@ changes directory, and the "pwd" command reflects this.
 ----
 
 $ ls -la
-<type or copy-paste the result here>
+total 24
+drwxr-xr-x  6 kcooler  staff   204 May 21 15:22 .
+drwxr-xr-x  6 kcooler  staff   204 May 21 15:22 ..
+-rw-r--r--@ 1 kcooler  staff  6148 May 21 15:22 .DS_Store
+drwxr-xr-x  3 kcooler  staff   102 May 21 15:10 database
+-rw-r--r--@ 1 kcooler  staff  1091 May 21 15:10 pom.xml
+drwxr-xr-x  5 kcooler  staff   170 May 21 15:22 src
 
 
 ----
@@ -62,14 +68,15 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type or copy-paste your answer here>
+"." means the current location. ".." is the parent location
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+.DS_Store
+pm.xml
 
 
 ----
@@ -77,7 +84,10 @@ $ ls -la
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+.
+..
+database
+src
 
 
 ----
