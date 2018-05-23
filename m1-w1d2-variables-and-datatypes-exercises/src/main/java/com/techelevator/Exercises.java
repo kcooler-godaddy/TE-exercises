@@ -423,7 +423,7 @@ public class Exercises {
         int hoursPerDay = 24;
         double hoursToPaint623Rooms = 623 / combinedRate;
         double daysToPaint623Rooms = hoursToPaint623Rooms / hoursPerDay;
-        System.out.println(daysToPaint623Rooms);
+        System.out.println(daysToPaint623Rooms + " days");
         /*
         Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
         build an additional variable to hold your full name in the order of last name, first name, middle initial. The
@@ -446,8 +446,8 @@ public class Exercises {
         float newYorkToChicagoMiles = 800f;
         float milesAlreadyTraveled = 537f;
         int percentOfTripCompleted = (int) ((milesAlreadyTraveled / newYorkToChicagoMiles)*100);
-        System.out.println(percentOfTripCompleted);
-        
+        System.out.println(percentOfTripCompleted + "%");
+
             
 	}
 
