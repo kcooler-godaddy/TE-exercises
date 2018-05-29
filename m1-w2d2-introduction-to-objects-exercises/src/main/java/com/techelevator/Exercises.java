@@ -386,13 +386,17 @@ public class Exercises {
 	 */
 	public String stringYak(String str) {
 		String holder = "";
-		boolean [] isThere = new boolean [str.length()];
 		if (str.length() < 3) return str; 
-		for (int i = 0; i < str.length() - 2; i++) {
-			if ((str.charAt(i) == 'y') &&(str.charAt(i+2) == 'k')) isThere[i] = true;
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) == 'y' && i < str.length() - 2) {
+				if (str.charAt(i+2) == 'k') {
+					i += 2;
+				}
+				else holder += str.charAt(i);
+			}
+			else holder += str.charAt(i);
 		}
-
-		return null;
+		return holder;
 	}
 	
 }
