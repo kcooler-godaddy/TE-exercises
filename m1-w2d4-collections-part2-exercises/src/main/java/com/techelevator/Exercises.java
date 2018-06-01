@@ -262,6 +262,7 @@ public class Exercises {
 	 */
 	public Map<String, Integer> last2Revisted(String[] words) {
 		Map<String, Integer> result = new HashMap<String, Integer>();
+		
 		for (String word: words) {
 			String last2 = word.substring(word.length() - 2);
 			result.put(word,  0);
