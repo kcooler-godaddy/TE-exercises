@@ -10,6 +10,7 @@ public class FruitTree {
 		this.piecesOfFruitLeft = startingPiecesOfFruit;
 	}
 
+
 	public String getTypeOfFruit() {
 		return typeOfFruit;
 	}
@@ -23,6 +24,11 @@ public class FruitTree {
 			return false;
 		}
 		else {
+			
+		}
+		if (numberOfPiecesToRemove > this.piecesOfFruitLeft) {
+			return false;
+		} else {
 			this.piecesOfFruitLeft -= numberOfPiecesToRemove;
 			return true;
 		}
