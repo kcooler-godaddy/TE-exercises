@@ -10,7 +10,7 @@ public class AirplaneTest {
 	
 	@Before
 	public void setup() {
-		airplane = new Airplane(20, 80); 
+		airplane = new Airplane(20, 80);  
 	}
 	
 	@Test
