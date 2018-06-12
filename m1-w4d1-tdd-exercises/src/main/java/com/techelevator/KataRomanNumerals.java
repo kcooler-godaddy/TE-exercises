@@ -22,7 +22,6 @@ public class KataRomanNumerals {
 		return romanValues;
 	}
 	
-	
 	public int toArabic(String inputNumeral) {
 		int arabic = 0;
 		LinkedHashMap<String, Integer> romanValues = getRomanValues();
@@ -43,8 +42,6 @@ public class KataRomanNumerals {
 		return arabic;
 	}
 		
-		
-	
 	public String toRomanNumerals(int arabic) {
 		String romanNumerals = "";
 		
