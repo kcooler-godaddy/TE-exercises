@@ -18,9 +18,6 @@ public class FizzWriter {
 				}
 			}
 		}
-		
-		
-
 	}
 	
 	public static String fizzBuzz(int number) {
