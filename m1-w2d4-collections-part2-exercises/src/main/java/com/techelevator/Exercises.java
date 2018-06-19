@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -176,7 +177,30 @@ public class Exercises {
 	 * 
 	 */
 	public Map<String, Integer> last2Revisted(String[] words) {
-		return null;
+		
+		Map<String, Integer> output = new HashMap<String, Integer>();
+		
+		for (String str : words) {
+			
+			int count = 0;
+			
+			if (str.length() <= 2) {
+				output.put(str, count);
+				continue;
+			}
+			
+			String last2 = str.substring(str.length() - 2);
+			
+			for (int i = 0; i < str.length() - 2; i++) {
+				if (str.substring(i, i + 2).equals(last2)) {
+					count++;
+				}
+			}
+			
+			output.put(str, count);
+		}
+		
+		return output;
 	}
 
 	/*
