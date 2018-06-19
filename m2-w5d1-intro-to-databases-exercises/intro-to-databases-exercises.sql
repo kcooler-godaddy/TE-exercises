@@ -5,12 +5,7 @@
 --   The value immediately after the problem statement is the expected number of rows that should be returned by the query.
 
 -- 1. The name and population of all cities in Ontario, Canada (27 rows)
-<<<<<<< HEAD
 SELECT name, population FROM city WHERE countrycode = 'CAN' AND district = 'Ontario';
-=======
-select name, population from city WHERE countrycode = 'CAN' AND district = 'Ontario'
-
->>>>>>> 2e50540c635802e7c7aafa33c8d8d71a918e277c
 
 -- 2. The name and population of all cities in Montana (1 row)
 Select * FROM city WHERE countrycode = 'USA' and district = 'Montana';
