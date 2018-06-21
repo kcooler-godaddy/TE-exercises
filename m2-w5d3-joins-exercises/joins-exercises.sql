@@ -175,7 +175,7 @@ join inventory on inventory.film_id = film.film_id
 join rental on inventory.inventory_id = rental.inventory_id
 group by last_name, first_name
 order by rental_count desc
-limit 11
+limit 10
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
 -- (#1 should have 87 rentals and #5 should have 72 rentals)
