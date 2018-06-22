@@ -106,5 +106,6 @@ delete from category where name = 'Mathmagical'
 -- describe any remaining adjustments needed before the film "Euclidean PI" can 
 -- be removed from the film table.
 
--- **all entries with the Euclidean PI film_id need to be deleted from the film_actor and inventory tables before the film can be deleted from the film table. 
+-- ** this problem was unassigned.
+-- ** however, all entries with the Euclidean PI film_id need to be deleted from the film_actor and inventory tables before the film can be deleted from the film table. 
 
