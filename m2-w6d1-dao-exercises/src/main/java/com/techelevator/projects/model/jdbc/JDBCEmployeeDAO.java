@@ -74,7 +74,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 		while(result.next()) {
 			employees.add(mapRowToEmployee(result));
 		}
-		return new ArrayList<>();
+		return employees;
 	}
 
 	@Override
