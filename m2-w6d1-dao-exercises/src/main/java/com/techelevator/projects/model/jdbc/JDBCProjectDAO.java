@@ -22,29 +22,14 @@ public class JDBCProjectDAO implements ProjectDAO {
 	
 	@Override
 	public List<Project> getAllActiveProjects() {
-		LocalDate ld = LocalDate.now();
 		List<Project> projects = new ArrayList<Project>();
 		
-		String sqlSelectActiveProjects = "select * from project where (from_date is not null) and (from_date < ?) and (to_date > ? or to_date is null)";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectActiveProjects, ld.toString(), ld.toString());
+		String sqlSelectActiveProjects = "select * from project where (from_date is not null) and (from_date < current_date) and (to_date > current_date or to_date is null)";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectActiveProjects);
 		while(result.next()) {
 			projects.add(mapRowToProject(result));
 		}
 		return projects;
-		
-//		String sqlSelectAllProjects = "select * from project";
-//		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectAllProjects);
-//		while(result.next()) {
-//			projects.add(mapRowToProject(result));
-//		}
-//		List<Project> activeProjects = new ArrayList<Project>();
-//		
-//		for (Project project: projects) {
-//			if((project.getStartDate() != null) && (project.getStartDate().isBefore(ld)) && ((project.getEndDate().isAfter(ld)) || (project.getEndDate() == null))) {
-//				activeProjects.add(project);
-//			}
-//		}
-//		return activeProjects;
 		
 	}
 
@@ -65,8 +50,18 @@ public class JDBCProjectDAO implements ProjectDAO {
 		
 		project.setId(result.getLong("project_id"));
 		project.setName(result.getString("name"));
-		project.setStartDate(result.getDate("from_date").toLocalDate());
-		project.setEndDate(result.getDate("to_date").toLocalDate());
+		if(result.getDate("from_date") == null) {
+			project.setStartDate(null);
+		}
+		else {
+			project.setStartDate(result.getDate("from_date").toLocalDate());
+		}
+		if(result.getDate("to_date") == null) {
+			project.setEndDate(null);
+		}
+		else {
+			project.setEndDate(result.getDate("to_date").toLocalDate());
+		}
 		
 		return project;
 	}
