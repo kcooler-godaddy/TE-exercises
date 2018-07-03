@@ -1,0 +1,53 @@
+/* I modified the html file because I wanted to try to do the exercises with CSS Grid */
+
+.layer {
+	display: grid;
+	grid-template: repeat(4, 80px) / repeat(8, 35px);
+}
+	
+.box {
+	color: white;
+	height: 80px;
+	text-align: center;
+	font-size: 0.4em;
+	vertical-align: middle;
+	line-height: 80px;
+}
+
+.even {
+	background-color: rgb(60, 162, 201);
+}
+
+.odd {
+	background-color: rgb(234, 54, 89);
+}
+#box_0 {
+	grid-area: 1/4/2/6;
+}
+#box_1 {
+	grid-area: 2/3/3/5;
+}
+#box_2 {
+	grid-area: 2/5/3/7;
+}
+#box_3 {
+	grid-area: 3/2/4/4;
+}
+#box_4 {
+	grid-area: 3/4/4/6;
+}
+#box_5 {
+	grid-area: 3/6/4/8;
+}
+#box_6 {
+	grid-area: 4/1/5/3;
+}
+#box_7 {
+	grid-area: 4/3/5/5;
+}
+#box_8 {
+	grid-area: 4/5/5/7;
+}
+#box_9 {
+	grid-area: 4/7/5/9;
+}

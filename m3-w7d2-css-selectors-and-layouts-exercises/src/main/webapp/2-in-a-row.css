@@ -1,0 +1,27 @@
+/* I modified the html file because I wanted to try to do the exercises with CSS Grid */
+
+.layer {
+	display: grid;
+	grid-template: 80px / repeat(10, 70px);
+}
+	
+.box {
+	color: white;
+	text-align: center;
+	font-size: 0.4em;
+	vertical-align: middle;
+	line-height: 80px;
+}
+
+.even {
+	background-color: rgb(60, 162, 201);
+}
+
+.odd {
+	background-color: rgb(234, 54, 89);
+}
+
+
+
+
+
