@@ -18,6 +18,18 @@
 				
 				See exercise2-fibonacci.png for example output
 			 --%>
+			<li>1</li>
+			<li>2</li> 
+			<c:set var="previous" value="${1}"/>
+			<c:set var="current" value="${2}"/>
+			<c:forEach begin="3" end="25" var="i">
+				<c:set var="fibNumber" value="${current+previous}" />
+				<li>
+					${fibNumber}
+				</li>
+				<c:set var="previous" value="${current}" />
+				<c:set var="current" value="${fibNumber}" />
+			</c:forEach>
 		</ul>
 	</body>
 </html>
