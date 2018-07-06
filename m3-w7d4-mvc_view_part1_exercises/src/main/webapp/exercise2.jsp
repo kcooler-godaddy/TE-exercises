@@ -23,7 +23,7 @@
 			<c:set var="previous" value="${1}"/>
 			<c:set var="current" value="${2}"/>
 			<c:forEach begin="3" end="25" var="i">
-				<c:set var="fibNumber" value="${current+previous}" />
+				<c:set var="fibNumber" value="${(current + previous)}" />
 				<li>
 					${fibNumber}
 				</li>

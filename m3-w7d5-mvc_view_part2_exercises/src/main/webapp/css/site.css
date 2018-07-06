@@ -56,3 +56,15 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+.information {
+	text-align: left;
+}
+.stars {
+	height: 20px;
+}
+.toy-image {
+	height: 100px;
+}
+table {
+	border: 1px solid grey;
+}
