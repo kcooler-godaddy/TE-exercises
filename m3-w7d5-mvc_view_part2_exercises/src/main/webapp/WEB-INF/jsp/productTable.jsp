@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
 
 <!DOCTYPE html>
 
@@ -20,9 +21,43 @@
         
     </nav>
     <section id="main-content">
-
-       
-
+		<h3>Toy Department</h3>
+    	<table>
+    		<tr class="row-image">
+				<td></td>
+				<c:forEach var="product" items="${productList}">
+					<td class="column"><img class="toy-image" alt="image of toy" src="img/${product.imageName}"/></td>
+				</c:forEach>
+			</tr>
+			<tr class="row-name">
+				<td class="label">Name</td>
+				<c:forEach var="product" items="${productList}">
+					<td class="column"><c:out value="${product.name}"/></td>
+				</c:forEach>
+			</tr><tr class="row-rating">
+				<td class="label">Rating</td>
+				<c:forEach var="product" items="${productList}">
+					<td class="column">
+						<img class="stars" src="img/<fmt:formatNumber type="number" maxFractionDigits="0" value="${product.averageRating}"/>-star.png" alt="star rating">
+					</td>
+				</c:forEach>
+			</tr><tr class="row-mfr">
+				<td class="label">Mfr</td>
+				<c:forEach var="product" items="${productList}">
+					<td class="column"><c:out value="${product.manufacturer}"/></td>
+				</c:forEach>
+			</tr><tr class="row-price">
+				<td class="label">Price</td>
+				<c:forEach var="product" items="${productList}">
+					<td class="column price">$<c:out value="${product.price}"/></td>
+				</c:forEach>
+			</tr><tr class="row-weight">
+				<td class="label">wt. (in lbs)</td>
+				<c:forEach var="product" items="${productList}">
+					<td class="column"><c:out value="${product.weightInLbs}"/></td>
+				</c:forEach>
+			</tr>
+    	</table>
     </section>
 </body>
 </html>

@@ -58,13 +58,38 @@ section {
 }
 .information {
 	text-align: left;
+	width: 70%;
+	vertical-align: top;
 }
 .stars {
-	height: 20px;
+	height: 13px;
 }
 .toy-image {
 	height: 100px;
 }
-table {
-	border: 1px solid grey;
+.list-table {
+	font-size: .8em;
+	margin-left: 20px;
+	width: 95%;
+}
+
+.best-seller {
+	color: red;
+	font-size: .8em;
+}
+.product-name {
+	font-weight: bold;
+}
+.weight {
+	font-weight: bold;
+}
+.price{
+	color: rgb(167, 41, 58);
+}
+.row-name, .row-mfr, .row-weight {
+	background-color: rgb(205,205,205);
+}
+.label {
+	background-color:white;
+	text-align: left;
 }
