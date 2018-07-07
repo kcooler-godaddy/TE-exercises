@@ -22,11 +22,18 @@
     </nav>
     <section id="main-content">
 		<h3>Toy Department</h3>
-    	<table>
+    	<table class="table-table">
     		<tr class="row-image">
 				<td></td>
 				<c:forEach var="product" items="${productList}">
-					<td class="column"><img class="toy-image" alt="image of toy" src="img/${product.imageName}"/></td>
+					<c:set var="displayBestSeller" value=""/>
+   					<c:if test="${product.topSeller}">
+	 					<c:set var="displayBestSeller" value="BEST SELLER!" />
+	 				</c:if>
+					<td class="column">
+						<img class="toy-image" alt="image of toy" src="img/${product.imageName}"/>
+						<p class="best-seller"><c:out value="${displayBestSeller}"/></p>
+					</td>
 				</c:forEach>
 			</tr>
 			<tr class="row-name">

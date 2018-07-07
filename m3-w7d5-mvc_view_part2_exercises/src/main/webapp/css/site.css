@@ -92,4 +92,19 @@ section {
 .label {
 	background-color:white;
 	text-align: left;
+	font-weight: bold;
 }
+.table-table {
+	font-size: .8em;
+	width: 95%;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+.table-table .toy-image{
+	height: 50px;
+}
+
+
+
+
