@@ -104,7 +104,19 @@ section {
 .table-table .toy-image{
 	height: 50px;
 }
-
-
+.tile {
+	display: inline-block;
+	width: 300px;
+	font-size: .8em;
+}
+.tile .stars {
+	height: 17px;
+}
+.tile .price {
+	line-height: 25px;
+	position: relative;
+	top: 5px;
+	font-size: 1.2em;
+}
 
 
