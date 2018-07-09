@@ -56,6 +56,7 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+
 .information {
 	text-align: left;
 	width: 70%;
@@ -118,5 +119,24 @@ section {
 	top: 5px;
 	font-size: 1.2em;
 }
+
+.detail {
+	text-align: left;
+	display: flex;
+}
+.bold{
+	font-weight: bold;
+}
+
+.detail .toy-image {
+	height: 250px;
+	margin-left: 10px;
+}
+.detail .info {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+
 
 

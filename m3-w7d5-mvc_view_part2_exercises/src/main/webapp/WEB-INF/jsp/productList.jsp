@@ -1,32 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"  %>
 
-<!DOCTYPE html>
+<c:import url="/WEB-INF/jsp/header.jsp"/>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product List View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-        </ul>
-        
-    </nav>
-    <section id="main-content">
-    	<h3>Toy Department</h3>
     	<table class="list-table" border=1 frame=void rules=rows>
     		<c:forEach var="product" items="${productList}">
     			<tr>
 	    			<td class="image-container">
-	    					<img class="toy-image" src="img/${product.imageName}" alt="toy image">
+	    				<c:url value="/productDetail" var="productDetailURL">
+							<c:param name="productId" value="${product.productId}"/>
+						</c:url>
+						<a href="${productDetailURL}">
+							<img class="toy-image" src="img/${product.imageName}" alt="toy image">
+						</a>
 	    			</td>
 	    			<td class="information">
 	    				<div class="product-name">
@@ -53,6 +39,5 @@
 	    		</tr>	
     		</c:forEach> 
     	</table>
-    </section>
-</body>
-</html>
+
+<c:import url="/WEB-INF/jsp/footer.jsp"/>
