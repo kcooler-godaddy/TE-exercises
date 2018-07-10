@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:set var="pageTitle" value="All Actors List"/>
+<c:set var="pageTitle" value="Search Actors Form"/>
 
 <%@include file="common/header.jspf"%>
 
@@ -10,16 +10,5 @@
 	<input type="text" id="actorSearch" name="actorSearch" />
 	<input type="submit" value="Submit" />
 </form>
-
-<table class="table">
-	<tr>
-		<th>Name</th>
-	</tr>
-	<c:forEach items="${actors}" var="actor">
-		<tr>
-    		<td>${actor.firstName} ${actor.lastName}</td>
-		</tr>
-	</c:forEach>
-</table>
 
 <%@include file="common/footer.jspf"%>

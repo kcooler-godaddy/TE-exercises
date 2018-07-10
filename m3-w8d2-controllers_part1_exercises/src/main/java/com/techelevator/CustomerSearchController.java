@@ -13,5 +13,10 @@ public class CustomerSearchController {
 
     @Autowired
     private CustomerDao customerDao;
+    
+	@RequestMapping("/searchCustomerForm")
+	public String showSearchCustomerForm() {
+		return "searchCustomerForm";
+	}
 
 }

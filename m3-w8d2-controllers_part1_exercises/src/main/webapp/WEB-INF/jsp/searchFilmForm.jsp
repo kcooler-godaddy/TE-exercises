@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:set var="pageTitle" value="All Films List"/>
+<c:set var="pageTitle" value="Search Film Form"/>
 
 <%@include file="common/header.jspf"%>
 
@@ -31,24 +31,5 @@
 	</select>
 	<input type="submit" value="Submit" />
 </form>
-
-<table class="table">
-	<tr>
-		<th>Title</th>
-		<th>Description</th>
-		<th>Release Year</th>
-		<th>Length</th>
-		<th>Rating</th>
-	</tr>
-	<c:forEach items="${films}" var="film">
-		<tr>
-    		<td>${film.title}</td>
-    		<td>${film.description}</td>
-    		<td>${film.releaseYear}</td>
-    		<td>${film.length}</td>
-    		<td>${film.rating}</td>
-		</tr>
-	</c:forEach>
-</table>
 
 <%@include file="common/footer.jspf"%>
