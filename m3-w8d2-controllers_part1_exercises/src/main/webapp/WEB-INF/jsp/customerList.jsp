@@ -7,8 +7,8 @@
 <c:url value="/customerList" var="formAction" />
 <form method="GET" action="${formAction}">
 	<label for="name">Name:</label>
-	<label for="sort">Sort:</label>
 	<input type="text" id="name" name="name" />
+	<label for="sort">Sort:</label>
 	<select id="sort" name="sort">
   		<option value="last_name">Last Name</option>
   		<option value="email">Email</option>
@@ -24,10 +24,14 @@
 	    <th>Active</th>
 	</tr>
   	<c:forEach var="customer" items="${customers}">
+  		<c:set var="activeDisplay" value="No"/>
+  		<c:if test="${customer.active}">
+  			<c:set var="activeDisplay" value="Yes"/>
+  		</c:if>
 	  	<tr>
 		    <td>${customer.firstName} ${customer.lastName}</td>
 		    <td>${customer.email}</td>
-		    <td>${customer.active}</td>
+		    <td>${activeDisplay}</td>
 	  	</tr>
 	</c:forEach>
 </table>

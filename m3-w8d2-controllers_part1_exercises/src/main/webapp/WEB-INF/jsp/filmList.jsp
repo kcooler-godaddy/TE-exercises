@@ -7,10 +7,10 @@
 <c:url value="/filmList" var="formAction" />
 <form method="GET" action="${formAction}">
 	<label for="minLength">Minimum Length:</label>
-	<label for="maxLength">Maximum Length:</label>
-	<label for="genre">Genre:</label>
 	<input type="text" id="minLength" name="minLength" />
+	<label for="maxLength">Maximum Length:</label>
 	<input type="text" id="maxLength" name="maxLength" />
+	<label for="genre">Genre:</label>
 	<select id="genre" name="genre">
   		<option value="Action">Action</option>
   		<option value="Animation">Animation</option>
