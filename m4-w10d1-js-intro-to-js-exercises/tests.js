@@ -106,8 +106,7 @@ QUnit.test("Fizz Buzz", function (assert) {
 QUnit.test("Count Values", function (assert) {
 
     assert.deepEqual(
-        { 1: 1, 99: 3, 43: 1, 2: 2, 55: 1, 78: 1, 2345: 1, 438: 1, 107: 1 },
-        countValues([1, 99, 43, 2, 55, 78, 99, 2345, 438, 2, 99, 107]));
+        countValues([1, 99, 43, 2, 55, 78, 99, 2345, 438, 2, 99, 107]), { 1: 1, 99: 3, 43: 1, 2: 2, 55: 1, 78: 1, 2345: 1, 438: 1, 107: 1 });
     assert.deepEqual(countValues([]), {});
     assert.deepEqual(countValues([0]), { 0: 1 });
     assert.deepEqual(countValues([0, 20]), { 0: 1, 20: 1 });
