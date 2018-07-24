@@ -129,32 +129,16 @@ function fizzBuzz(x){
 }
 
 // 14
-function countValues(arr){
-    // result = [];
-    // for(let i = 0; i < arr.length; i++){
-    //     if(result.includes(arr[i])){
-    //         let place = result.findIndex(arr[i]);
-    //         result[place].
-    //     }
-    //     else result.push([arr[i], 1])
-    // }
 
+function countValues(arr) {
 
-    let myMap = new Map();
-    for(let i = 0; i < arr.length; i++){
-        if(myMap.has(arr[i])){
-            myMap.set(arr[i], myMap.get(arr[i]) + 1);
-        }
-        else myMap.set(arr[i], 1);
-    }
+    let ret = {};
     
-
-    let result = [];
-    for (var [key, value] of myMap) {
-        // console.log(key + ': ' + value);
-        result.push(key + ': ' + value);
-      }
-    return result;
+    arr.forEach(function(value) {
+        ret[value] = ret.hasOwnProperty(value) ? ret[value] + 1 : 1;
+    });
+    
+    return ret;
 }
 
 // 15
