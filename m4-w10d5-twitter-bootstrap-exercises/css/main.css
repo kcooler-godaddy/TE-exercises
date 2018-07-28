@@ -1,0 +1,91 @@
+.navbar-header img {
+    margin-top: 10px;
+    margin-right: 20px !important;
+}
+.welcome-bar{
+    position: relative;
+    color: white;
+    height: 300px;
+}
+@media screen and (max-width: 768px) {
+    .welcome-bar{
+        position: relative;
+        color: white;
+        height: 300px;
+        background-color: black;
+    }
+}
+#banner-img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+.title-details {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+.welcome-bar a {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+#learn {
+    font-size: 12px;
+}
+
+#double-img {
+    margin-bottom: 20px;
+}
+#basic .btn-primary, #basic .btn-primary:hover, #basic .btn-primary:active, #basic .btn-primary:visited {
+    background-color: rgb(47, 135, 208) !important;
+    border-color: rgb(47, 135, 208) !important;
+}
+#premium .btn-primary, #premium .btn-primary:hover, #premium .btn-primary:active, #premium .btn-primary:visited {
+    background-color: rgb(40, 192, 83) !important;
+    border-color: rgb(40, 192, 83) !important;
+}
+#pro .btn-primary, #pro .btn-primary:hover, #pro .btn-primary:active, #pro .btn-primary:visited {
+    background-color: rgb(232, 67, 65) !important;
+    border-color: rgb(232, 67, 65) !important;
+}
+
+table{
+    border: grey 1px solid;
+}
+#basic thead {
+    background-color: rgb(47, 135, 208);
+    color: white;
+}
+#premium thead {
+    background-color: rgb(40, 192, 83);
+    color: white;
+}
+#pro thead {
+    background-color: rgb(232, 67, 65);
+    color: white;
+}
+.price {
+    font-size: 200%;
+}
+.price .value {
+    font-size: 200%;
+}
+.fas{
+    font-size: 60px;
+}
+.photo-container {
+    position: relative;
+    color: white;
+}
+.photo-col {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    padding-top: 20px;
+}
+blockquote {
+    position: absolute;
+    bottom: 0;
+    font-size: 14px !important;
+    border-left: none !important; 
+}
