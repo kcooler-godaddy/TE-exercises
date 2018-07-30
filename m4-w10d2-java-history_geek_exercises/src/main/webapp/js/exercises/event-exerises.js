@@ -15,8 +15,9 @@ $(document).ready(function () {
 	$("[type=radio]").click(function() {
 			let shipping = $(this).attr("data-cost");
 			$("#shipping .price").text('$' + shipping);
-			let newtotal = addMoney(originalTotal, shipping);
-			$("#grandtotal span").text(newtotal)
+			let shippingtotal = addMoney(originalTotal, shipping);
+			let shippingTaxTotal = addMoney(shippingtotal, $("#tax .price").text().substring(1));
+			$("#grandtotal span").text(shippingTaxTotal)
 		});
 	
 	$("body").keydown(function(event){
