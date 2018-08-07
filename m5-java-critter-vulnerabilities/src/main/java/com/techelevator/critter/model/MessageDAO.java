@@ -15,5 +15,7 @@ public interface MessageDAO {
 	public List<Conversation> getConversationsForUser(String userName);
 
 	public Conversation getConversation(String forUserName, String withUserName);
+	
+	public void deleteMessageById(long id);
 
 }

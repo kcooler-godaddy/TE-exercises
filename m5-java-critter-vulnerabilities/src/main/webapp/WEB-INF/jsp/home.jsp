@@ -12,6 +12,14 @@
 			<span class="username"><a href="${messageHref}">${message.fromUsername}</a></span>
 			<span class="message-text">${message.text}</span>
 			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			
+			<c:if test="${currentUser.equals(message.fromUsername)}">
+				<c:url var="doDeleteURL" value="/doDelete">
+					<c:param name="id" value="${message.id}" />
+				</c:url>
+				<span class="delete-btn"><a href="${doDeleteURL}">Delete</a></span>
+			</c:if>
+			
 		</li>
 	</c:forEach>
 </ol>

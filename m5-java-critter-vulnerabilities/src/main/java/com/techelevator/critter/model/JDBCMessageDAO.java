@@ -116,6 +116,12 @@ public class JDBCMessageDAO implements MessageDAO {
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectMessagesSentByUser);
 		return mapRowSetToMessages(results);
 	}
+	
+	@Override
+	public void deleteMessageById(long id) {
+		String sqlDeleteMessageById = "Delete from message where message_id = ?";
+		jdbcTemplate.update(sqlDeleteMessageById, id);
+	}
 
 	private List<Message> mapRowSetToMessages(SqlRowSet results) {
 		ArrayList<Message> messageList = new ArrayList<>();
@@ -142,5 +148,7 @@ public class JDBCMessageDAO implements MessageDAO {
 		Long id = result.getLong(1);
 		return id;
 	}
+
+	
 
 }

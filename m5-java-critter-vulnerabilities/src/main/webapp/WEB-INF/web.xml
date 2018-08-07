@@ -30,4 +30,20 @@
   	<url-pattern>*.jpg</url-pattern>
   	<url-pattern>*.gif</url-pattern>
   </servlet-mapping>
+  
+  <!-- added to protect against sessions fixation. timeout after 20 minutes of innactivity -->
+  <session-config>
+  	<session-timeout>20</session-timeout>
+  	<tracking-mode>COOKIE</tracking-mode>
+  </session-config>
+  
+  <filter>
+  	<filter-name>authorizationFilter</filter-name>
+  	<filter-class>com.techelevator.critter.security.AuthorizationFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>authorizationFilter</filter-name>
+  	<servlet-name>springmvc</servlet-name>
+  </filter-mapping>
 </web-app>
