@@ -10,11 +10,11 @@
 			<c:if test="${not empty message.toUsername}">
 				<c:url var="conversationHref" value="/users/${message.fromUsername}/conversations/${message.toUsername}" />
 				<span class="username">
-					<a href="${conversationHref}">@${message.toUsername}</a>
+					<a href="${conversationHref}">@<c:out value="${message.toUsername}"/></a>
 				</span>
 			</c:if>
-			<span class="message-text">${message.text}</span>
-			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<span class="message-text"><c:out value="${message.text}"/></span>
+			<time class="timeago" datetime="${message.createTime}"><c:out value="${message.createTime}"/></time>
 		</li>
 	</c:forEach>
 </ol>

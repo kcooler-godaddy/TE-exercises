@@ -28,8 +28,8 @@ public class JDBCMessageDAO implements MessageDAO {
 										 "FROM message "+
 										 "WHERE private = FALSE "+
 										 "ORDER BY create_date DESC "+
-										 "LIMIT "+limit;
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPublicMessages);
+										 "LIMIT ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPublicMessages, limit);
 		return mapRowSetToMessages(results);
 	}
 
@@ -46,9 +46,9 @@ public class JDBCMessageDAO implements MessageDAO {
 		String sqlSelectPublicMessagesByUser = "SELECT * "+
 											   "FROM message "+
 											   "WHERE private = FALSE "+
-											   "AND sender_name = '"+userName+"' "+
+											   "AND sender_name = ? "+
 											   "ORDER BY create_date DESC ";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPublicMessagesByUser);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectPublicMessagesByUser, userName);
 		return mapRowSetToMessages(results);
 	}
 	
@@ -58,15 +58,15 @@ public class JDBCMessageDAO implements MessageDAO {
 		
 		String sqlSelectConversations =  "SELECT DISTINCT(receiver_name) "+
 										 "FROM message "+
-									     "WHERE sender_name = '"+userName+"' "+
+									     "WHERE sender_name = ? "+
 										 "AND private = true "+
 									     "UNION "+
 										 "SELECT DISTINCT(sender_name) "+
 									     "FROM message "+
-										 "WHERE receiver_name = '"+userName+"' "+
+										 "WHERE receiver_name = ? "+
 									     "AND private = true";
 
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectConversations);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectConversations, userName, userName);
 		
 		while (results.next())
 		{
@@ -99,11 +99,11 @@ public class JDBCMessageDAO implements MessageDAO {
 	
 	private List<Message> getConversationMessages(String forUser, String withUser) {
 		String sqlSelectByConversation = "SELECT * FROM message "+
-										 "WHERE (sender_name = '"+forUser+"' AND receiver_name = '"+withUser+"') "+
-										 "OR (sender_name = '"+withUser+"' AND receiver_name = '"+forUser+"') "+
+										 "WHERE (sender_name = ? AND receiver_name = ?) "+
+										 "OR (sender_name = ? AND receiver_name = ?) "+
 										 "ORDER BY create_date DESC";
 		
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectByConversation);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectByConversation, forUser, withUser, withUser, forUser);
 		return mapRowSetToMessages(results);
 	}
 	
@@ -111,9 +111,9 @@ public class JDBCMessageDAO implements MessageDAO {
 	public List<Message> getMessagesSentByUser(String userName) {
 		String sqlSelectMessagesSentByUser = "SELECT * "+
 										     "FROM message "+
-										     "WHERE sender_name = '"+userName+"' "+
+										     "WHERE sender_name = ? "+
 										     "ORDER BY create_date DESC ";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectMessagesSentByUser);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectMessagesSentByUser, userName);
 		return mapRowSetToMessages(results);
 	}
 	

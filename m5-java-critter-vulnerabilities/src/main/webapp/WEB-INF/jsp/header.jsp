@@ -70,6 +70,6 @@
 			</div>
 		</nav>
 		<c:if test="${not empty currentUser}">
-			<p id="currentUser">Current User: ${currentUser}</p>
+			<p id="currentUser">Current User: <c:out value="${currentUser}"/></p>
 		</c:if>		
 		<div class="container">

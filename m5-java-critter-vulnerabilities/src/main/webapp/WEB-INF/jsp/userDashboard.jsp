@@ -7,9 +7,9 @@
 	<c:forEach var="conversation" items="${conversations}">
 		<li class="message">
 			<c:url var="conversationHref" value="/users/${conversation.forUser}/conversations/${conversation.withUser}" />
-			<span class="username"><a href="${conversationHref}">${conversation.withUser}</a></span>
-			<span class="message-text">${conversation.latestMessage.text}</span>
-			<time class="timeago" datetime="${conversation.latestMessage.createTime}">${conversation.latestMessage.createTime}</time>
+			<span class="username"><a href="${conversationHref}"><c:out value="${conversation.withUser}"/></a></span>
+			<span class="message-text"><c:out value="${conversation.latestMessage.text}"/></span>
+			<time class="timeago" datetime="${conversation.latestMessage.createTime}"><c:out value="${conversation.latestMessage.createTime}"/></time>
 		</li>
 	</c:forEach>
 </ol>
